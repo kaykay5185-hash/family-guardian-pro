@@ -40,7 +40,7 @@ $env:SESSION_SECRET = '<random secret from a password manager>'
 python app.py
 ```
 
-Visit `http://127.0.0.1:5000`, sign in, and select **Pair a device**. On the Android device, enter the server URL and scan the QR code or type its short-lived code. The code expires after ten minutes and can be used once. For actual remote use, configure HTTPS and use that HTTPS URL in the app. The app intentionally permits cleartext only to support local/private-network development; never expose an HTTP server to the public internet. Deploy TLS, restrict inbound access, protect backups, and set an explicit secret key before production.
+Visit `http://127.0.0.1:5000`, sign in, and select **Add device**, then **Get code**. On the Android device, enter the server URL and its short-lived pairing code. The code expires after ten minutes and can be used once. The dashboard loads its map only when **Load map** is selected. For actual remote use, configure HTTPS and use that HTTPS URL in the app. The app intentionally permits cleartext only to support local/private-network development; never expose an HTTP server to the public internet. Deploy TLS, restrict inbound access, protect backups, and set an explicit secret key before production.
 
 ## API overview
 
@@ -55,4 +55,4 @@ Device tokens are random, shown only once at registration, and stored server-sid
 
 ## Current limitations
 
-Safe-zone arrival/departure alerts are created when a received GPS update crosses a zone boundary and displayed in the dashboard. Android location updates are requested about once per minute while the visible foreground service runs; Android device power settings may affect cadence. OpenStreetMap map tiles and Leaflet/QR libraries are loaded from their public CDNs, so the dashboard needs internet access for the map and QR image. This starter is not a substitute for emergency services or a reviewed child-safety product.
+Safe-zone arrival/departure alerts are created when a received GPS update crosses a zone boundary and displayed in the dashboard. Android location updates are requested about once per minute while the visible foreground service runs; Android device power settings may affect cadence. The optional map uses Leaflet and OpenStreetMap tiles from public CDNs and needs internet access when loaded. This starter is not a substitute for emergency services or a reviewed child-safety product.
