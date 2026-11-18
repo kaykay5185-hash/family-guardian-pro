@@ -1,0 +1,22 @@
+# Python environment and generated files
+server/.venv/
+**/__pycache__/
+*.py[cod]
+server/*.sqlite3
+server/*.sqlite3-*
+server/*.log
+.env
+server/.env
+
+# Android / Gradle build output
+android/.gradle/
+android/**/build/
+android/local.properties
+*.jks
+*.keystore
+
+# Editor/OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
